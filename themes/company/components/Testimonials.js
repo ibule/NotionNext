@@ -59,7 +59,7 @@ export const Testimonials = () => {
   }, [])
   // 用户评分
   const ratings = [1, 2, 3, 4, 5]
-  const STARTER_TESTIMONIALS_ITEMS = siteConfig('STARTER_TESTIMONIALS_ITEMS')
+  const COMPANY_TESTIMONIALS_ITEMS = siteConfig('COMPANY_TESTIMONIALS_ITEMS')
   return (
     <>
       {/* <!-- ====== Testimonial Section Start --> */}
@@ -71,13 +71,13 @@ export const Testimonials = () => {
             <div className='w-full px-4'>
               <div className='mx-auto mb-[60px] max-w-[485px] text-center'>
                 <span className='mb-2 block text-lg font-semibold text-primary'>
-                  {siteConfig('STARTER_TESTIMONIALS_TITLE')}
+                  {siteConfig('COMPANY_TESTIMONIALS_TITLE')}
                 </span>
                 <h2 className='mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]'>
-                  {siteConfig('STARTER_TESTIMONIALS_TEXT_1')}
+                  {siteConfig('COMPANY_TESTIMONIALS_TEXT_1')}
                 </h2>
                 <p className='text-base text-body-color dark:text-dark-6'>
-                  {siteConfig('STARTER_TESTIMONIALS_TEXT_2')}
+                  {siteConfig('COMPANY_TESTIMONIALS_TEXT_2')}
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@ export const Testimonials = () => {
             <div className='swiper testimonial-carousel common-carousel p-5'>
               <div className='swiper-wrapper'>
                 {/* 用户评价卡牌 */}
-                {STARTER_TESTIMONIALS_ITEMS?.map((item, index) => {
+                {COMPANY_TESTIMONIALS_ITEMS?.map((item, index) => {
                   return (
                     <div key={index} className='swiper-slide'>
                       <div className='rounded-xl bg-white px-4 py-[30px] shadow-testimonial dark:bg-dark sm:px-[30px]'>
@@ -96,21 +96,21 @@ export const Testimonials = () => {
                             <img
                               key={index}
                               alt='star icon' // 为每个图片设置唯一的 key 属性
-                              src={siteConfig('STARTER_TESTIMONIALS_STAR_ICON')}
+                              src={siteConfig('COMPANY_TESTIMONIALS_STAR_ICON')}
                             />
                           ))}
                         </div>
 
                         <p className='mb-6 text-base text-body-color dark:text-dark-6'>
-                          “{item.STARTER_TESTIMONIALS_ITEM_TEXT}”
+                          “{item.COMPANY_TESTIMONIALS_ITEM_TEXT}”
                         </p>
 
                         <a
-                          href={item.STARTER_TESTIMONIALS_ITEM_URL}
+                          href={item.COMPANY_TESTIMONIALS_ITEM_URL}
                           className='flex items-center gap-4'>
                           <div className='h-[50px] w-[50px] overflow-hidden rounded-full'>
                             <img
-                              src={item.STARTER_TESTIMONIALS_ITEM_AVATAR}
+                              src={item.COMPANY_TESTIMONIALS_ITEM_AVATAR}
                               alt='author'
                               className='h-[50px] w-[50px] overflow-hidden rounded-full object-cover'
                             />
@@ -118,10 +118,10 @@ export const Testimonials = () => {
 
                           <div>
                             <h3 className='text-sm font-semibold text-dark dark:text-white'>
-                              {item.STARTER_TESTIMONIALS_ITEM_NICKNAME}
+                              {item.COMPANY_TESTIMONIALS_ITEM_NICKNAME}
                             </h3>
                             <p className='text-xs text-body-secondary'>
-                              {item.STARTER_TESTIMONIALS_ITEM_DESCRIPTION}
+                              {item.COMPANY_TESTIMONIALS_ITEM_DESCRIPTION}
                             </p>
                           </div>
                         </a>

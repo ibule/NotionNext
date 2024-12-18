@@ -7,7 +7,7 @@ import { siteConfig } from '@/lib/config'
  * @returns
  */
 export const Brand = () => {
-  const brands = siteConfig('STARTER_BRANDS')
+  const brands = siteConfig('COMPANY_BRANDS')
   return (
     <>
       {/* <!-- ====== Brands Section Start --> */}

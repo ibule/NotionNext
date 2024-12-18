@@ -46,14 +46,14 @@ export const MessageForm = () => {
   return (
     <>
       <h3 className='mb-8 text-2xl font-semibold text-dark dark:text-white md:text-[28px] md:leading-[1.42]'>
-        {siteConfig('STARTER_CONTACT_MSG_TITLE')}
+        {siteConfig('COMPANY_CONTACT_MSG_TITLE')}
       </h3>
       <form ref={formRef}>
         <div className='mb-[22px]'>
           <label
             // for="fullName"
             className='mb-4 block text-sm text-body-color dark:text-dark-6'>
-            {siteConfig('STARTER_CONTACT_MSG_NAME')}*
+            {siteConfig('COMPANY_CONTACT_MSG_NAME')}*
           </label>
           <input
             disabled={success}
@@ -69,7 +69,7 @@ export const MessageForm = () => {
           <label
             // for="email"
             className='mb-4 block text-sm text-body-color dark:text-dark-6'>
-            {siteConfig('STARTER_CONTACT_MSG_EMAIL')}*
+            {siteConfig('COMPANY_CONTACT_MSG_EMAIL')}*
           </label>
           <input
             disabled={success}
@@ -85,7 +85,7 @@ export const MessageForm = () => {
           <label
             // for="phone"
             className='mb-4 block text-sm text-body-color dark:text-dark-6'>
-            {siteConfig('STARTER_CONTACT_MSG_PHONE')}*
+            {siteConfig('COMPANY_CONTACT_MSG_PHONE')}*
           </label>
           <input
             disabled={success}
@@ -101,7 +101,7 @@ export const MessageForm = () => {
           <label
             // for="message"
             className='mb-4 block text-sm text-body-color dark:text-dark-6'>
-            {siteConfig('STARTER_CONTACT_MSG_TEXT')}*
+            {siteConfig('COMPANY_CONTACT_MSG_TEXT')}*
           </label>
           <textarea
             disabled={success}
@@ -117,12 +117,12 @@ export const MessageForm = () => {
             disabled={success}
             type='submit'
             className='inline-flex items-center justify-center rounded-md bg-primary px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out hover:bg-blue-dark'>
-            {siteConfig('STARTER_CONTACT_MSG_SEND')}
+            {siteConfig('COMPANY_CONTACT_MSG_SEND')}
           </button>
           {/* Success message */}
           {success && (
             <p className='mt-2 text-green-600 text-sm'>
-              {siteConfig('STARTER_CONTACT_MSG_THANKS')}
+              {siteConfig('COMPANY_CONTACT_MSG_THANKS')}
             </p>
           )}
         </div>

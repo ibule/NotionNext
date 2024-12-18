@@ -14,8 +14,8 @@ import { useEffect, useState } from 'react'
 export const Logo = props => {
   const { white, NOTION_CONFIG } = props
   const router = useRouter()
-  const logoWhite = siteConfig('STARTER_LOGO_WHITE')
-  const logoNormal = siteConfig('STARTER_LOGO')
+  const logoWhite = siteConfig('COMPANY_LOGO_WHITE')
+  const logoNormal = siteConfig('COMPANY_LOGO')
   const { isDarkMode } = useGlobal()
   const [logo, setLogo] = useState(logoWhite)
   const [logoTextColor, setLogoTextColor] = useState('text-white')

@@ -5,11 +5,11 @@ import { SVGFooterCircleBG } from './svg/SVGFooterCircleBG'
 
 /* eslint-disable @next/next/no-img-element */
 export const Footer = props => {
-  const footerPostCount = siteConfig('STARTER_FOOTER_POST_COUNT', 2)
+  const footerPostCount = siteConfig('COMPANY_FOOTER_POST_COUNT', 2)
   const latestPosts = props?.latestPosts
     ? props?.latestPosts.slice(0, footerPostCount)
     : []
-  const STARTER_FOOTER_LINK_GROUP = siteConfig('STARTER_FOOTER_LINK_GROUP', [])
+  const COMPANY_FOOTER_LINK_GROUP = siteConfig('COMPANY_FOOTER_LINK_GROUP', [])
   return (
     <>
       {/* <!-- ====== Footer Section Start --> */}
@@ -24,7 +24,7 @@ export const Footer = props => {
                   <Logo white={true} />
                 </a>
                 <p className='mb-8 max-w-[270px] text-base text-gray-7'>
-                  {siteConfig('STARTER_FOOTER_SLOGAN')}
+                  {siteConfig('COMPANY_FOOTER_SLOGAN')}
                 </p>
                 <div className='-mx-3 flex items-center'>
                   <div className='mx-3'>
@@ -35,7 +35,7 @@ export const Footer = props => {
             </div>
 
             {/* 中间三列菜单组 */}
-            {STARTER_FOOTER_LINK_GROUP?.map((item, index) => {
+            {COMPANY_FOOTER_LINK_GROUP?.map((item, index) => {
               return (
                 <div
                   key={index}
@@ -66,7 +66,7 @@ export const Footer = props => {
             <div className='w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12'>
               <div className='mb-10 w-full'>
                 <h4 className='mb-9 text-lg font-semibold text-white'>
-                  {siteConfig('STARTER_FOOTER_BLOG_LATEST_TITLE')}
+                  {siteConfig('COMPANY_FOOTER_BLOG_LATEST_TITLE')}
                 </h4>
                 {/* 展示两条最新博客文章 */}
                 <div className='flex flex-col gap-8'>
@@ -105,24 +105,24 @@ export const Footer = props => {
                 <div className='my-1'>
                   <div className='-mx-3 flex items-center justify-center md:justify-start'>
                     <a
-                      href={siteConfig('STARTER_FOOTER_PRIVACY_POLICY_URL')}
+                      href={siteConfig('COMPANY_FOOTER_PRIVACY_POLICY_URL')}
                       className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
-                      {siteConfig('STARTER_FOOTER_PRIVACY_POLICY_TEXT')}
+                      {siteConfig('COMPANY_FOOTER_PRIVACY_POLICY_TEXT')}
                     </a>
                     <a
                       href={siteConfig(
-                        'STARTER_FOOTER_PRIVACY_LEGAL_NOTICE_URL'
+                        'COMPANY_FOOTER_PRIVACY_LEGAL_NOTICE_URL'
                       )}
                       className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
-                      {siteConfig('STARTER_FOOTER_PRIVACY_LEGAL_NOTICE_TEXT')}
+                      {siteConfig('COMPANY_FOOTER_PRIVACY_LEGAL_NOTICE_TEXT')}
                     </a>
                     <a
                       href={siteConfig(
-                        'STARTER_FOOTER_PRIVACY_TERMS_OF_SERVICE_URL'
+                        'COMPANY_FOOTER_PRIVACY_TERMS_OF_SERVICE_URL'
                       )}
                       className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
                       {siteConfig(
-                        'STARTER_FOOTER_PRIVACY_TERMS_OF_SERVICE_TEXT'
+                        'COMPANY_FOOTER_PRIVACY_TERMS_OF_SERVICE_TEXT'
                       )}
                     </a>
                   </div>
@@ -149,11 +149,11 @@ export const Footer = props => {
         {/* Footer 背景 */}
         <div>
           <span className='absolute left-0 top-0 z-[-1]'>
-            <img src='/images/starter/footer/shape-1.svg' alt='' />
+            <img src='/images/company/footer/shape-1.svg' alt='' />
           </span>
 
           <span className='absolute bottom-0 right-0 z-[-1]'>
-            <img src='/images/starter/footer/shape-3.svg' alt='' />
+            <img src='/images/company/footer/shape-3.svg' alt='' />
           </span>
 
           <span className='absolute right-0 top-0 z-[-1]'>
