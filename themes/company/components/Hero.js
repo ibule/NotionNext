@@ -13,7 +13,7 @@ export const Hero = props => {
       {/* <!-- ====== Hero Section Start --> */}
       <div
         id='home'
-        className='relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]'>
+        className='relative overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 pt-[120px] md:pt-[130px] lg:pt-[160px]'>
         <div className='container'>
           <div className='-mx-4 flex flex-wrap items-center'>
             <div className='w-full px-4'>
@@ -29,7 +29,7 @@ export const Hero = props => {
                   {siteConfig('STARTER_HERO_TITLE_2', null, config)}
                 </p>
                 {/* 按钮组 */}
-                <ul className='mb-10 flex flex-wrap items-center justify-center gap-5'>
+                {/* <ul className='mb-10 flex flex-wrap items-center justify-center gap-5'>
                   {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, config) && (
                     <li>
                       <a
@@ -68,7 +68,7 @@ export const Hero = props => {
                       </a>
                     </li>
                   )}
-                </ul>
+                </ul> */}
               </div>
             </div>
 
