@@ -13,6 +13,7 @@ import { BackToTopButton } from './components/BackToTopButton'
 import { Blog } from './components/Blog'
 import { Brand } from './components/Brand'
 import { Service } from './components/Service'
+import { Product } from './components/Product.js'
 import { Contact } from './components/Contact'
 import { FAQ } from './components/FAQ'
 import { Features } from './components/Features'
@@ -20,6 +21,7 @@ import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Pricing } from './components/Pricing'
+import { ChoseUs } from './components/ChoseUs'
 import { Team } from './components/Team'
 import { Testimonials } from './components/Testimonials'
 import CONFIG from './config'
@@ -96,12 +98,16 @@ const LayoutIndex = props => {
       {siteConfig('COMPANY_HERO_ENABLE', true, CONFIG) && <Hero {...props} />}
       {/* 我们的服务 */}
       {siteConfig('COMPANY_SERVICES_ENABLE', true, CONFIG) && <Service />}
+      {/* 产品 */}
+      {siteConfig('COMPANY_PRODUCTS_ENABLE', true, CONFIG) && <Product />}
+      {/* 选择我们 */}
+      {siteConfig('COMPANY_CHOSE_US', true, CONFIG) && <ChoseUs />}
       {/* 合作伙伴 */}
-      {siteConfig('COMPANY_BRANDS_ENABLE', true, CONFIG) && <Brand />}
+      {/* {siteConfig('COMPANY_BRANDS_ENABLE', true, CONFIG) && <Brand />} */}
       {/* 产品特性 */}
-      {siteConfig('COMPANY_FEATURE_ENABLE', true, CONFIG) && <Features />}
+      {/* {siteConfig('COMPANY_FEATURE_ENABLE', true, CONFIG) && <Features />} */}
       {/* 关于 */}
-      {siteConfig('COMPANY_ABOUT_ENABLE', true, CONFIG) && <About />}
+      {/* {siteConfig('COMPANY_ABOUT_ENABLE', true, CONFIG) && <About />} */}
       {/* 价格 */}
       {siteConfig('COMPANY_PRICING_ENABLE', true, CONFIG) && <Pricing />}
       {/* 评价展示 */}
@@ -113,7 +119,7 @@ const LayoutIndex = props => {
       {/* 团队介绍 */}
       {siteConfig('COMPANY_TEAM_ENABLE', true, CONFIG) && <Team />}
       {/* 博文列表 */}
-      {siteConfig('COMPANY_BLOG_ENABLE', true, CONFIG) && (
+      {/* {siteConfig('COMPANY_BLOG_ENABLE', true, CONFIG) && (
         <>
           <Blog posts={posts} />
           <div className='container mx-auto flex justify-end mb-4'>
@@ -123,12 +129,12 @@ const LayoutIndex = props => {
             </Link>
           </div>
         </>
-      )}
+      )} */}
       {/* 联系方式 */}
       {siteConfig('COMPANY_CONTACT_ENABLE', true, CONFIG) && <Contact />}
 
       {/* 行动呼吁 */}
-      {siteConfig('COMPANY_CTA_ENABLE', true, CONFIG) && <CTA />}
+      {/* {siteConfig('COMPANY_CTA_ENABLE', true, CONFIG) && <CTA />} */}
     </>
   )
 }
@@ -164,7 +170,7 @@ const LayoutSlug = props => {
     <>
       <Banner title={post?.title} description={post?.summary} />
       <div className='container grow'>
-        <div className='flex flex-wrap justify-center -mx-4'>
+        <div className='flex flex-wrap justify-center mx-4'>
           <div id='container-inner' className='w-full p-4'>
             {lock && <ArticleLock validPassword={validPassword} />}
 
@@ -183,7 +189,7 @@ const LayoutSlug = props => {
 }
 
 /**
- * 仪表盘
+ * ��表盘
  * @param {*} props
  * @returns
  */

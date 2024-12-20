@@ -5,41 +5,25 @@ import { SVGFooterCircleBG } from './svg/SVGFooterCircleBG'
 
 /* eslint-disable @next/next/no-img-element */
 export const Footer = props => {
-  const footerPostCount = siteConfig('COMPANY_FOOTER_POST_COUNT', 2)
+  const footerPostCount = siteConfig('COMPANY_FOOTER_POST_COUNT', 4)
   const latestPosts = props?.latestPosts
     ? props?.latestPosts.slice(0, footerPostCount)
     : []
   const COMPANY_FOOTER_LINK_GROUP = siteConfig('COMPANY_FOOTER_LINK_GROUP', [])
+  console.log(COMPANY_FOOTER_LINK_GROUP, 'COMPANY_FOOTER_LINK_GROUP')
+
   return (
     <>
       {/* <!-- ====== Footer Section Start --> */}
       <footer
-        className='wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]'
+        className='wow fadeInUp relative z-10 bg-[#090E34] pt-10'
         data-wow-delay='.15s'>
-        <div className='container'>
-          <div className='-mx-4 flex flex-wrap'>
-            <div className='w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12'>
-              <div className='mb-10 w-full'>
-                <a className='-mx-4 mb-6 inline-block max-w-[160px]'>
-                  <Logo white={true} />
-                </a>
-                <p className='mb-8 max-w-[270px] text-base text-gray-7'>
-                  {siteConfig('COMPANY_FOOTER_SLOGAN')}
-                </p>
-                <div className='-mx-3 flex items-center'>
-                  <div className='mx-3'>
-                    <SocialButton />
-                  </div>
-                </div>
-              </div>
-            </div>
-
+        <div className='container py-8'>
+          <div className='flex flex-wrap  justify-around'>
             {/* 中间三列菜单组 */}
             {COMPANY_FOOTER_LINK_GROUP?.map((item, index) => {
               return (
-                <div
-                  key={index}
-                  className='w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12'>
+                <div key={index} className=' px-4 '>
                   <div className='mb-10 w-full'>
                     <h4 className='mb-9 text-lg font-semibold text-white'>
                       {item.TITLE}
@@ -61,9 +45,8 @@ export const Footer = props => {
                 </div>
               )
             })}
-
             {/* 页脚右侧最新博文 */}
-            <div className='w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12'>
+            <div className=' px-4 '>
               <div className='mb-10 w-full'>
                 <h4 className='mb-9 text-lg font-semibold text-white'>
                   {siteConfig('COMPANY_FOOTER_BLOG_LATEST_TITLE')}
@@ -98,49 +81,16 @@ export const Footer = props => {
 
         {/* 底部版权信息相关 */}
 
-        <div className='mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]'>
+        <div className='border-t border-[#8890A4] border-opacity-40 py-4'>
           <div className='container'>
-            <div className='-mx-4 flex flex-wrap'>
-              <div className='w-full px-4 md:w-2/3 lg:w-1/2'>
-                <div className='my-1'>
-                  <div className='-mx-3 flex items-center justify-center md:justify-start'>
-                    <a
-                      href={siteConfig('COMPANY_FOOTER_PRIVACY_POLICY_URL')}
-                      className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
-                      {siteConfig('COMPANY_FOOTER_PRIVACY_POLICY_TEXT')}
-                    </a>
-                    <a
-                      href={siteConfig(
-                        'COMPANY_FOOTER_PRIVACY_LEGAL_NOTICE_URL'
-                      )}
-                      className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
-                      {siteConfig('COMPANY_FOOTER_PRIVACY_LEGAL_NOTICE_TEXT')}
-                    </a>
-                    <a
-                      href={siteConfig(
-                        'COMPANY_FOOTER_PRIVACY_TERMS_OF_SERVICE_URL'
-                      )}
-                      className='px-3 text-base text-gray-7 hover:text-white hover:underline'>
-                      {siteConfig(
-                        'COMPANY_FOOTER_PRIVACY_TERMS_OF_SERVICE_TEXT'
-                      )}
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className='w-full px-4 md:w-1/3 lg:w-1/2'>
-                <div className='my-1 flex justify-center md:justify-end'>
-                  <p className='text-base text-gray-7'>
-                    Designed and Developed by
-                    <a
-                      href='https://github.com/tangly1024/NotionNext'
-                      rel='nofollow noopner noreferrer'
-                      target='_blank'
-                      className='px-1 text-gray-1 hover:underline'>
-                      NotionNext {siteConfig('VERSION')}
-                    </a>
-                  </p>
-                </div>
+            <div className='-mx-4 flex flex-wrap justify-center'>
+              <div className='my-1'>
+                <p className='text-sm text-gray-500 flex justify-center gap-2'>
+                  <span>Copyright © 2024 浩铭科技</span>
+                  <a href='https://beian.miit.gov.cn/' target='blank'>
+                    粤ICP备2023084687号
+                  </a>
+                </p>
               </div>
             </div>
           </div>

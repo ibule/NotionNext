@@ -113,7 +113,7 @@ const CONFIG = {
     'https://tangly1024.lemonsqueezy.com/checkout/buy/df924d66-09dc-42a4-a632-a6b0c5cc4f28',
 
   // 首页用户测评区块
-  COMPANY_TESTIMONIALS_ENABLE: true, // 测评区块开关
+  COMPANY_TESTIMONIALS_ENABLE: false, // 测评区块开关
   COMPANY_TESTIMONIALS_TITLE: '用户反馈',
   COMPANY_TESTIMONIALS_TEXT_1: '我们的用户怎么说',
   COMPANY_TESTIMONIALS_TEXT_2:
@@ -178,7 +178,7 @@ const CONFIG = {
   ],
 
   //   FAQ 常见问题模块
-  COMPANY_FAQ_ENABLE: true, // 常见问题模块开关
+  COMPANY_FAQ_ENABLE: false, // 常见问题模块开关
   COMPANY_FAQ_TITLE: '常见问题解答',
   COMPANY_FAQ_TEXT_1: '有任何问题吗？请看这里',
   COMPANY_FAQ_TEXT_2: '我们收集了常见的用户疑问',
@@ -200,7 +200,7 @@ const CONFIG = {
     '先检查Notion_Page_ID是否正确配置，其次由于博客的每个页面都有独立缓存，刷新网页后即可解决',
 
   // 团队成员区块
-  COMPANY_TEAM_ENABLE: true, // 团队成员区块开关
+  COMPANY_TEAM_ENABLE: false, // 团队成员区块开关
   COMPANY_TEAM_TITLE: '团队成员',
   COMPANY_TEAM_TEXT_1: '我们的开发者团队',
   COMPANY_TEAM_TEXT_2:
@@ -233,26 +233,25 @@ const CONFIG = {
 
   // 博客文章区块
   COMPANY_BLOG_ENABLE: true, // 首页博文区块开关
-  COMPANY_BLOG_TITLE: '我们的博客',
+  COMPANY_BLOG_TITLE: '',
   COMPANY_BLOG_COUNT: 3, // 首页博文区块默认展示前3篇文章
-  COMPANY_BLOG_TEXT_1: '最近的新闻',
-  COMPANY_BLOG_TEXT_2:
-    '这里会发布一些关于NotionNext的最新动态，包括新的动向、新的未来计划，以及新功能的特性',
+  COMPANY_BLOG_TEXT_1: '',
+  COMPANY_BLOG_TEXT_2: '',
 
   // 联系模块
   COMPANY_CONTACT_ENABLE: true, // 联系模块开关
   COMPANY_CONTACT_TITLE: '联系我们',
   COMPANY_CONTACT_TEXT: '告诉我们您遇到的问题',
   COMPANY_CONTACT_LOCATION_TITLE: '我们的位置',
-  COMPANY_CONTACT_LOCATION_TEXT: '中国，福建',
+  COMPANY_CONTACT_LOCATION_TEXT: '中国，深圳',
   COMPANY_CONTACT_EMAIL_TITLE: '我们如何帮助您？',
-  COMPANY_CONTACT_EMAIL_TEXT: 'mail@tangly1024.com',
+  COMPANY_CONTACT_EMAIL_TEXT: 'mrhuxt@gmail.com',
 
   // 嵌入外部表单
   COMPANY_CONTACT_MSG_EXTERNAL_URL: 'https://noteforms.com/forms/vlfwyb', // 基于NoteForm创建，将留言数据存在Notion中
   //   自定义留言表单，以下几个配置暂时废弃
   //   COMPANY_CONTACT_MSG_TITLE: '向我们留言',
-  //   COMPANY_CONTACT_MSG_NAME: '姓名',
+  //   COMPANY_CONTACT_MSG_NAME: '姓��',
   //   COMPANY_CONTACT_MSG_EMAIL: '邮箱地址',
   //   COMPANY_CONTACT_MSG_PHONE: '联系电话',
   //   COMPANY_CONTACT_MSG_TEXT: '消息内容',
@@ -301,47 +300,9 @@ const CONFIG = {
     {
       TITLE: '关于我们',
       LINK_GROUP: [
-        { TITLE: '官方主页', URL: '/#home' },
-        { TITLE: '操作文档', URL: 'https://docs.tangly1024.com/about' },
-        {
-          TITLE: '帮助支持',
-          URL: 'https://docs.tangly1024.com/article/how-to-question'
-        },
-        {
-          TITLE: '合作申请',
-          URL: 'https://docs.tangly1024.com/article/my-service'
-        }
-      ]
-    },
-    {
-      TITLE: '功能特性',
-      LINK_GROUP: [
-        {
-          TITLE: '部署指南',
-          URL: 'https://docs.tangly1024.com/article/vercel-deploy-notion-next'
-        },
-        {
-          TITLE: '升级指南',
-          URL: 'https://docs.tangly1024.com/article/how-to-update-notionnext'
-        },
-        { TITLE: '最新版本', URL: 'https://docs.tangly1024.com/article/latest' }
-      ]
-    },
-    {
-      TITLE: 'Notion写作',
-      LINK_GROUP: [
-        {
-          TITLE: 'Notion开始写作',
-          URL: 'https://docs.tangly1024.com/article/start-to-write'
-        },
-        {
-          TITLE: '快捷键提升效率',
-          URL: 'https://docs.tangly1024.com/article/notion-short-key'
-        },
-        {
-          TITLE: '中国大陆使用Notion',
-          URL: 'https://docs.tangly1024.com/article/notion-faster'
-        }
+        { TITLE: '官方主页', URL: '/' },
+        { TITLE: '产品与服务', URL: '/#products' },
+        { TITLE: '联系我们', URL: '/#contact' }
       ]
     }
   ],
@@ -373,12 +334,13 @@ const CONFIG = {
     'https://docs.tangly1024.com/article/vercel-deploy-notion-next',
   COMPANY_CTA_BUTTON_TEXT: '开始体验',
 
-  COMPANY_POST_REDIRECT_ENABLE: true, // 默認開啟重定向
-  COMPANY_POST_REDIRECT_URL: 'https://blog.tangly1024.com', // 重定向域名
+  COMPANY_POST_REDIRECT_ENABLE: false, // 默認開啟重定向
+  COMPANY_POST_REDIRECT_URL: 'https://geekax.com', // 重定向域名
   COMPANY_NEWSLETTER: process.env.NEXT_PUBLIC_THEME_COMPANY_NEWSLETTER || false, // 是否开启邮件订阅 请先配置mailchimp功能 https://docs.tangly1024.com/article/notion-next-mailchimp
 
-  TARTER_SERVICES: [
+  COMPANY_SERVICES_ENABLE: [
     {
+      id: 1,
       title: '跨境独立站开发',
       description:
         '根据您的品牌定位和市场策略，设计与开发简洁、易用并具视觉吸引力的官方网站。',
@@ -386,6 +348,7 @@ const CONFIG = {
       bgColor: 'rgba(240, 249, 255, 0.8)' // 可选
     },
     {
+      id: 2,
       title: '微信小程序开发',
       description:
         '根据您的品牌定位和市场策略，设计与开发简洁、易用并具视觉吸引力的官方网站。',
@@ -393,6 +356,7 @@ const CONFIG = {
       bgColor: 'rgba(254, 246, 233, 0.8) ' // 可选
     },
     {
+      id: 3,
       title: 'APP 开发',
       description:
         '根据您的品牌定位和市场策略，设计与开发简洁、易用并具视觉吸引力的官方网站。',
@@ -400,6 +364,7 @@ const CONFIG = {
       bgColor: 'rgba(239, 240, 254, 0.8)' // 可选
     },
     {
+      id: 4,
       title: '技术咨询与维护',
       description:
         '根据您的品牌定位和市场策略，设计与开发简洁、易用并具视觉吸引力的官方网站。',
@@ -408,6 +373,57 @@ const CONFIG = {
     }
 
     // ... 其他服务配置
+  ],
+
+  // 产品展示区块配置
+  COMPANY_PRODUCTS_ENABLE: true, // 产品展示区块开关
+  COMPANY_PRODUCTS_TITLE: '产品展示',
+  COMPANY_PRODUCTS_DESCRIPTION: '',
+  COMPANY_PRODUCTS: [
+    {
+      id: 1,
+      title: '性能优化的独立站电商网站',
+      description:
+        '提供300多个精美的网站模板，涵盖各个行业和用途，让您快速搭建专业网站。提供300多个精美的网站模板，涵盖各个行业和用途，让您快速搭建专业网站提供300多个精美的网站模板，涵盖各个行业和用途，让您快速搭建专业网站提供300多个精美的网站模板，涵盖各个行业和用途，让您快速搭建专业网站',
+      image: '/images/company/products/shop-chair.png',
+      isReverse: false
+    },
+    {
+      id: 2,
+      title: 'AI智能建站',
+      description:
+        '运用人工智能技术，根据您的需求自动生成最适合的网站设计方案。',
+      image: '/images/company/products/shop-sofa.png',
+      isReverse: true
+    }
+  ],
+  COMPANY_CHOSE_US: [
+    {
+      id: 1,
+      title: '沟通至上',
+      description:
+        '在开发前，我们会认真倾听并帮助梳理项目思路，确保方案清晰可行。',
+      icon: '/images/company/svg/kefugoutong.svg'
+    },
+    {
+      id: 2,
+      title: '灵活定制',
+      description: '不拘泥于固定模板与框架，根据您的实际需求灵活调整方案。',
+      icon: '/images/company/svg/kefugoutong.svg'
+    },
+    {
+      id: 3,
+      title: '小团队高效率',
+      description: '精干的团队确保沟通顺畅、执行高效，降低沟通成本和等待时间。',
+      icon: '/images/company/svg/kefugoutong.svg'
+    },
+    {
+      id: 4,
+      title: '持续支持',
+      description:
+        '项目完成后，我们仍会提供技术支持和优化建议，为您长期发展保驾护航。',
+      icon: '/images/company/svg/kefugoutong.svg'
+    }
   ]
 }
 export default CONFIG

@@ -33,7 +33,7 @@ export const Logo = props => {
         setLogoTextColor('text-white')
       } else {
         setLogo(logoNormal)
-        setLogoTextColor('text-black')
+        setLogoTextColor('text-dark')
       }
     }, throttleMs)
 
@@ -51,20 +51,19 @@ export const Logo = props => {
         {logo && (
           <LazyImage
             priority
-            onClick={() => {
-              router.push('/')
-            }}
+            onClick={() => router.push('/')}
+            onKeyDown={e => e.key === 'Enter' && router.push('/')}
             src={logo}
             alt='logo'
             className='header-logo mr-1 h-8'
+            tabIndex={0}
           />
         )}
         {/* logo文字 */}
         <span
-          onClick={() => {
-            router.push('/')
-          }}
-          className={`${logoTextColor} logo dark:text-white py-1.5 header-logo-text whitespace-nowrap text-2xl font-semibold`}>
+          onClick={() => router.push('/')}
+          onKeyDown={e => e.key === 'Enter' && router.push('/')}
+          className={`py-1.5 whitespace-nowrap text-2xl font-semibold cursor-pointer ${logoTextColor} dark:text-white`}>
           {siteConfig('TITLE')}
         </span>
       </div>

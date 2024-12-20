@@ -10,23 +10,21 @@ export const Contact = () => {
     <>
       {/* <!-- ====== Contact Start ====== --> */}
       <section id='contact' className='relative py-20 md:py-[120px]'>
-        <div className='absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark'></div>
-        <div className='absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2'></div>
         <div className='container px-4'>
           <div className='-mx-4 flex flex-wrap items-center'>
             {/* 联系方式左侧文字 */}
-            <div className='w-full px-4 lg:w-7/12 xl:w-8/12'>
-              <div className='ud-contact-content-wrapper'>
+            <div className='w-full px-4 lg:w-7/12 xl:w-6/12  flex justify-center'>
+              <div className='ud-contact-content-wrapper '>
                 <div className='ud-contact-title mb-12 lg:mb-[150px]'>
                   <span className='mb-6 block text-base font-medium text-dark dark:text-white'>
                     {siteConfig('COMPANY_CONTACT_TITLE')}
                   </span>
-                  <h2 className='max-w-[260px] text-[35px] font-semibold leading-[1.14] text-dark dark:text-white'>
+                  <h2 className='text-[35px] font-semibold leading-[1.14] text-dark dark:text-white'>
                     {siteConfig('COMPANY_CONTACT_TEXT')}
                   </h2>
                 </div>
-                <div className='mb-12 flex flex-wrap justify-between lg:mb-0'>
-                  <div className='mb-8 flex w-[330px] max-w-full'>
+                <div className='mb-12 flex flex-col space-y-8 lg:mb-0'>
+                  <div className='flex w-[330px] max-w-full'>
                     <div className='mr-6 text-[32px] text-primary'>
                       <SVGLocation />
                     </div>
@@ -47,7 +45,7 @@ export const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  <div className='mb-8 flex w-[330px] max-w-full'>
+                  <div className='flex w-[330px] max-w-full'>
                     <div className='mr-6 text-[32px] text-primary'>
                       <SVGEmail />
                     </div>
@@ -71,22 +69,25 @@ export const Contact = () => {
             {url && url !== '' && (
               <>
                 {/* 联系方式右侧留言 */}
-                <div className='w-full px-4 lg:w-5/12 xl:w-4/12'>
+                <div className='w-full px-4 lg:w-5/12 xl:w-6/12'>
                   <div
-                    className='wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial dark:bg-dark-2 dark:shadow-none sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]'
+                    className='wow fadeInUp rounded-lg bg-white shadow-testimonial dark:bg-dark-2 dark:shadow-none px-8  sm:px-10   lg:px-10  2xl:px-[20px]'
                     data-wow-delay='.2s'>
-                    {/* 自定义的留言表单 、 需要对接接口 */}
-                    {/* <MessageForm/> */}
-                    {/* 嵌入外部表单 */}
                     <iframe
+                      title='联系表单'
                       src={siteConfig(
                         'COMPANY_CONTACT_MSG_EXTERNAL_URL',
                         null,
                         CONFIG
                       )}
-                      width='100%'
-                      height='500px'
-                      frameBorder='0'></iframe>
+                      style={{
+                        overflow: 'hidden',
+                        border: 'none',
+                        width: '100%',
+                        height: '450px',
+                        padding: '0'
+                      }}
+                    />
                   </div>
                 </div>
               </>

@@ -11,40 +11,15 @@ import { MenuItem } from './MenuItem'
 export const MenuList = props => {
   const { customNav, customMenu } = props
   const { locale } = useGlobal()
-
-  const [showMenu, setShowMenu] = useState(false) // 控制菜单展开/收起状态
   const router = useRouter()
+  const [showMenu, setShowMenu] = useState(false) // 控制菜单展开/收起状态
 
   let links = [
     {
-      icon: 'fas fa-archive',
-      name: locale.NAV.ARCHIVE,
-      href: '/archive',
-      show: siteConfig('HEO_MENU_ARCHIVE')
-    },
-    {
-      icon: 'fas fa-search',
-      name: locale.NAV.SEARCH,
-      href: '/search',
-      show: siteConfig('HEO_MENU_SEARCH')
-    },
-    {
-      icon: 'fas fa-folder',
-      name: locale.COMMON.CATEGORY,
-      href: '/category',
-      show: siteConfig('HEO_MENU_CATEGORY')
-    },
-    {
-      icon: 'fas fa-tag',
-      name: locale.COMMON.TAGS,
-      href: '/tag',
-      show: siteConfig('HEO_MENU_TAG')
+      name: '首页',
+      href: '/'
     }
   ]
-
-  if (customNav) {
-    links = customNav.concat(links)
-  }
 
   // 如果 开启自定义菜单，则覆盖Page生成的菜单
   if (siteConfig('CUSTOM_MENU', BLOG.CUSTOM_MENU)) {
@@ -60,21 +35,23 @@ export const MenuList = props => {
   }
 
   useEffect(() => {
-    setShowMenu(false)
-  }, [router])
+    router.events.on('routeChangeStart', () => setShowMenu(false))
+    return () => router.events.off('routeChangeStart', () => setShowMenu(false))
+  }, [router.events])
 
   return (
     <div>
       {/* 移动端菜单切换按钮 */}
       <button
+        type='button'
         id='navbarToggler'
         onClick={toggleMenu}
         className={`absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden ${
           showMenu ? 'navbarTogglerActive' : ''
         }`}>
-        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all'></span>
-        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all'></span>
-        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all'></span>
+        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all' />
+        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all' />
+        <span className='relative my-[6px] block h-[2px] w-[30px] bg-white duration-200 transition-all' />
       </button>
 
       <nav
